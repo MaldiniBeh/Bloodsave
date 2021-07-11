@@ -1,0 +1,98 @@
+<div class="mpart">
+  <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height">
+  </particles>
+
+      <div class="mform container-fluid ">
+        <div style="text-align: center;">
+          <h3>{{isLogin ?  'Connection':'Inscription'}}</h3>
+        </div>
+        <img src="/assets/img/user.png" alt="" class="image-responsive" style="width: 60px"><br><br><br>
+        <!-- Forme Ins -->
+        <form (ngSubmit)="OnFormelogin()" [formGroup]="Insform" *ngIf="!isLogin" >
+           <div class="floating-label ">
+            <input class="floating-input"
+            formControlName="username"
+             type="text"
+              placeholder=" "
+               >
+            <span class="highlight"></span>
+            <p class="text-danger"  *ngIf="!Insform.get('username').valid && Insform.get('username').touched">Nom invalide</p>
+            <label>Nom </label>
+          </div>
+          <div class="floating-label ">
+            <input class="floating-input"
+            formControlName="usernamelast"
+             type="text"
+              placeholder=" "
+               >
+            <span class="highlight"></span>
+            <p class="text-danger"  *ngIf="!Insform.get('usernamelast').valid && Insform.get('usernamelast').touched">Prenom invalide</p>
+            <label>Prenom </label>
+          </div>
+          <div class="floating-label" >
+                      <input class="floating-input"
+                      formControlName="insmail"
+                      type="email"
+                        placeholder=" "
+                        >
+                      <span class="highlight"></span>
+                      <p class="text-danger"  *ngIf="!Insform.get('insmail').valid && Insform.get('insmail').touched">Email invalide</p>
+                      <label>Adresse Email </label>
+                    </div>
+
+                    <div class="floating-label">
+                      <input class="floating-input"
+                      formControlName="inspass"
+                      type="password"
+                       placeholder=" "
+                        >
+                      <span class="highlight"></span>
+                      <p class="text-danger" *ngIf="!Insform.get('inspass').valid && Insform.get('inspass').touched">6 caractères minimum</p>
+                      <label> Mot de passe</label>
+                    </div>
+
+         <button type="button" class="btn btn-outline-dark" (click)=" Onswichmode()">Changer vers {{isLogin ? 'Inscription' :'Connection'}}</button><br><br>
+
+           <button  type="submit" class="btn btn-dark" [disabled]="!Insform.valid" >S'inscrire</button><br><br>
+
+        </form>
+        <!-- Forme End -->
+
+        <!-- Forme Connect big -->
+
+        <form class="needs-validation" id="cform" (ngSubmit)="OnFormeconnect()" [formGroup]="Conneform" *ngIf="isLogin">
+
+                  <div class="floating-label" >
+            <input class="floating-input"
+            formControlName="mail"
+             type="email"
+              placeholder=" "
+               >
+            <span class="highlight"></span>
+            <p class="text-danger"  *ngIf="!Conneform.get('mail').valid && Conneform.get('mail').touched">Email invalide</p>
+            <label>Adresse Email </label>
+          </div>
+      <div class="floating-label">
+                  <input class="floating-input"
+                  formControlName="pass"
+                  type="password"
+                  placeholder=" "
+                    >
+                  <span class="highlight"></span>
+                  <p class="text-danger" *ngIf="!Conneform.get('pass').valid && Conneform.get('pass').touched">6 caractères minimum</p>
+                  <label> Mot de passe</label>
+                </div>
+
+         <button type="button" class="btn btn-outline-dark" (click)=" Onswichmode()">Changer vers {{isLogin ? 'Inscription' :'Connection'}}</button><br><br>
+                              <button  type="submit" class="btn btn-dark" [disabled]="!Conneform.valid || waitaction" >{{ waitaction? 'Patientez...' : 'Se connecter' }} </button><br><br>
+
+          <em>
+            <small style="font-size: 1em; cursor: pointer;">
+              <a style="text-decoration: none;" class="text-dark" (click)="Onforgetpass()"> Mot de passe oublier
+                <i class="far fa-frown"></i> ? </a>
+            </small>
+          </em>
+        </form>
+        <!-- Forme End -->
+    </div>
+</div>

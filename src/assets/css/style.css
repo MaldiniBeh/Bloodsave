@@ -1,0 +1,1142 @@
+/*========================================== MASTER STYLESHEET ===========================================================
+
+	Project     :	BLOOD DONATION TEMPLATE
+	Version     :	1.0
+	Last Change : 	04/01/2019
+	Primary Use :   BLOOD DONATION TEMPLATE
+
+====================================================================================================================*/
+/*========================================== LAYOUT ===================================================================
+
+		1.GLOBAL STYLES
+		2.COMMON STYLES
+		3.BUTTON
+		4.NAVIGATION
+		5.HEADER PAGE
+		6.ABOUT US
+		7.CHIEF-GUEST
+		8.CTA
+		9.VOLUNTEERS
+		10.CAMPS
+		11.CTA-2
+		12.FOOTER
+		13.MEDIA QUERY
+
+======================================================================================================================*/
+
+/*========================================== COLOR CODES ===============================================================
+
+	Background         :#ffffff
+	Theme 			   :#4cb5f5
+	Button Hover Color :#39580e
+	Main Heading Color :#333333
+	Content Color      :#444444
+	Button bg Color    :#77b81e
+================================================================================================================*/
+
+/*========================================== TYPOGRAPHY =====================================================
+
+	Heading:font-family: 'Poppins', sans-serif;
+	Body   :font-family: 'Poppins', sans-serif;
+
+====================================================================================================================*/
+
+/*========================================== 1.GLOBAL CSS START ===========================================*/
+
+	@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+	@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+
+body {
+  background: #ffffff;
+  color: #666666;
+  font-family:'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+   margin:0 auto;
+  max-width:1400px;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #444444;
+  margin: 0px;
+}
+h1{
+  font-family:'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+h2{
+  font-family:'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+h3{
+  font-family:'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+h4{
+  font-family:'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+h5{
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+h6{
+  font-family:'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #333333;
+  margin: 0px;
+  letter-spacing: 1px;
+
+}
+a,
+a:hover {
+    color: inherit;
+    text-transform: none;
+	outline: none !important;
+	text-decoration: none !important;
+}
+
+.text-center {
+	margin:0 auto !important;
+    text-align: center;
+}
+.text-1-center{
+	 text-align: center;
+}
+.text-margin{
+	margin:0 auto;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.no-margin {
+	margin-left: 0;
+	margin-right: 0;
+}
+.no-pad {
+	padding-left: 0;
+	padding-right: 0;
+}
+.icon-right{
+	float:right;
+}
+.pos-rela{
+	position: relative;
+}
+
+/*========================================== 1.GLOBAL CSS END ===========================================*/
+/*========================================== 2.COMMON STYLES START===========================================*/
+
+.space-wid{
+	width:95%;
+	float:right;
+}
+.space-1-wid{
+	width:95%;
+	float:left;
+}
+.marg-top40{
+	margin-top:40px;
+}
+
+/*============= Background-color =======*/
+
+.section-padding {
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+.section-1-padding {
+    padding-top: 100px;
+    padding-bottom:50px;
+}
+.section-1-bg {
+    background-color: #ffffff;
+}
+.section-2-bg {
+    background-color: #f6f6f6;
+}
+.footer-bg{
+	 background-color: #ffffff;
+}
+.bgimage-property {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.read-bor{
+	border:1px solid #333333;
+	padding:10px;
+	border-radius:5px;
+	width:30%;
+	margin:0 auto;
+
+}
+/*============= Colors =======*/
+.txt-theme-color{
+	color:#bb0a1e;
+	letter-spacing:1px;
+}
+.txt-whte-sub,.txt-whte-sub p{
+	color:#f5f5f5;
+}
+.txt-whte{
+	color:#ffffff;
+}
+.cont-head-color{
+	color:#666666;
+	line-height:33px;
+}
+
+.line-bor{
+	border-bottom:3px solid #ee693f;
+	width:150px;
+	padding-top:10px;
+}
+.img-right-pad{
+	padding-right:15px;
+}
+.icon-rght1{
+	margin-right:20px;
+}
+.icon-left1{
+	padding-left:20px;
+}
+/*============= Tables =======*/
+.dis-tab{
+	display:inline-block;
+}
+.dis-tab-cell-top{
+	display:table-cell;
+	vertical-align:top;
+}
+.dis-tab-cell-middle{
+	display:table-cell;
+	vertical-align:middle;
+}
+.dis-tab-cell-middle1{
+	vertical-align:middle;
+}
+.dis-tab-cell{
+	display:table-cell;
+}
+/*============= Align =======*/
+.img-radius{
+	border-radius:5px;
+}
+.right-align{
+	text-align:right;
+}
+.lt-space{
+	letter-spacing:1px;
+}
+
+.word-br{
+	word-break:break-all;
+}
+.border-line{
+	border-bottom:2px solid #ee1437;
+	width:150px;
+	margin:10px 0 15px 0;
+}
+
+/*============= Background-color =======*/
+
+/*============= Padding top =======*/
+.pad-top5{
+	padding-top:5px;
+}
+.pad-top10{
+	padding-top:10px;
+}
+.pad-top15{
+	padding-top:15px;
+}
+.pad-top20{
+	padding-top:20px;
+}
+.pad-top30{
+	padding-top:30px;
+}
+/*============= Padding bottom =======*/
+.pad-bot5{
+	padding-bottom:5px;
+}
+.pad-bot10{
+	padding-bottom:10px;
+}
+.pad-bot15{
+	padding-bottom:15px;
+}
+.pad-bot20{
+	padding-bottom:20px;
+}
+.pad-bot30{
+	padding-bottom:30px;
+}
+/*============= Margin Top =======*/
+.marg-top5{
+	margin-top:5px;
+}
+.marg-top10{
+	margin-top:10px;
+}
+.marg-top15{
+	margin-top:15px;
+}
+.marg-top20{
+	margin-top:20px;
+}
+.marg-top30{
+	margin-top:30px;
+}
+.marg-top40{
+	margin-top:40px !important;
+}
+/*============= Margin Top =======*/
+.marg-bot5{
+	margin-bottom:5px;
+}
+.marg-bot10{
+	margin-bottom:10px;
+}
+.marg-bot15{
+	margin-bottom:15px;
+}
+.marg-bot20{
+	margin-bottom:20px;
+}
+.marg-bot30{
+	margin-bottom:30px;
+}
+.marg-bot40{
+	margin-bottom:40px !important;
+}
+  /* SAFARI CLASS */
+.rowsafari {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+}
+
+
+/*========================================== 2.COMMON STYLES END ===========================================*/
+/*========================================== 3.BUTTON START ===========================================*/
+
+.btn-1 {
+	border:1px solid #222222;
+	  background:#bb0a1e;
+	  border-radius:5px !important;
+	  color: #ffffff;
+	  padding: 10px 15px 10px 15px;
+	  font-size: 16px;
+	  letter-spacing:1px;
+	  cursor: pointer;
+	  font-weight:500;
+	  display:inline-block;
+	  	-webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+
+
+	}
+.btn-1:active, .btn-1:hover {
+	background:#ffffff;
+	color: #222222;
+	text-decoration:none;
+	-webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+	border:1px solid #bb0a1e;
+}
+.btn-2 {
+	border:1px solid #4cb5f5;
+	  background:#ffffff;
+	  border-radius:5px !important;
+	  color: #111111;
+	  padding: 10px 15px 10px 15px;
+	  font-size: 16px;
+	  letter-spacing:1px;
+	  cursor: pointer;
+	  font-weight:500;
+	  display:inline-block;
+	  	-webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+
+
+	}
+.btn-2:active, .btn-2:hover {
+	background:#4cb5f5;
+	color: #222222;
+	text-decoration:none;
+	-webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+	border:1px solid #999999;
+}
+.btn-icon{
+
+	padding-left:10px;
+}
+/*========================================== 3.BUTTON END ===========================================*/
+/*========================================== 4.NAVIGATION START ===========================================*/
+
+.navbar-light .navbar-nav .active > .nav-link,
+ .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show,
+ .navbar-light .navbar-nav .show > .nav-link {
+	color:#bb0a1e;
+	text-decoration: none;
+}
+.logo-image {
+    float: left;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.navbar{
+	margin:0 auto;
+	max-width:1400px;
+}
+
+.nav-img{
+	background-color:transparent;
+}
+.navbar{
+	border-bottom:1px solid #e6e6e6;
+}
+.nav-text{
+	color:#ffffff;
+	letter-spacing:1px;
+}
+
+.nav-link:active,.nav-link:hover,.nav-link:focus{
+	color:#bb0a1e !important;
+	text-decoration: none;
+}
+/*========================================== 4.NAVIGATION START ===========================================*/
+/*========================================== 5.HEADER START ===========================================*/
+.header-bg-image{
+	background-image: url("../img/red-blood-cells.webp");
+	padding-top:100px;
+	padding-bottom:100px;
+
+}
+.header-sub-img{
+	background-image: url("../img/blood_08.webp");
+	padding-top:100px;
+	padding-bottom:100px;
+		border-radius:5px 0px 0px 5px;
+}
+.sub-img-bor{
+	border-top:1px solid #d8d8d8;
+	border-left:1px solid #d8d8d8;
+	border-bottom:1px solid #d8d8d8;
+}
+.head-sub-con{
+	font-size:16px;
+	line-height:24px;
+	color:#bb0a1e;
+	letter-spacing:1px;
+}
+.head-inner-box{
+	background:#bb0a1e;
+	padding:20px 10px;
+	border-radius:5px;
+}
+.head-font{
+	color:#f5f5f5;
+	letter-spacing:1px;
+	font-weight:600;
+	font-size:16px;
+	line-height:24px;
+}
+.box-1-head{
+	padding:50px 20px;
+	border-top:1px solid #d8d8d8;
+	border-right:1px solid #d8d8d8;
+	border-bottom:1px solid #d8d8d8;
+	background-color:#ffffff;
+	border-radius:0px 5px 5px 0px;
+}
+/*========================================== 5.HEADER END ===========================================*/
+/*========================================== 6.ABOUT US START ===========================================*/
+.scdle-bor{
+	border:1px solid #bb0a1e;
+	padding:20px;
+	border-radius:5px;
+}
+/*========================================== 6.ABOUT US END ===========================================*/
+/*========================================== 7.CHIEF-GUEST START ===========================================*/
+.guest-font{
+	font-size:24px;
+	line-height:32px;
+	font-weight:500;
+	letter-spacing:1px;
+}
+.desination-font{
+	font-size:16px;
+	color:#bb0a1e;
+	line-height:24px;
+	letter-spacing:1px;
+}
+/*========================================== 7.CHIEF-GUEST END ===========================================*/
+/*========================================== 8.CTA START ===========================================*/
+.cta-bg-img{
+	background-image: url("../img/1920x500x1.jpg");
+	padding-top:100px;
+	padding-bottom:100px;
+}
+
+/*========================================== 8.CTA END ===========================================*/
+/*========================================== 9.VOLUNTEERS START ===========================================*/
+.vol-bg-color{
+	background:rgba(187, 10, 30,0.7);
+	padding:20px;
+	border-radius:5px 5px 0 0;
+}
+
+.vol-bor{
+	border-bottom:1px solid rgba(187, 10, 30,0.7);
+	border-right:1px solid rgba(187, 10, 30,0.7);
+	border-left:1px solid rgba(187, 10, 30,0.7);
+	padding:20px;
+	border-radius:0 0 5px 5px;
+}
+.vol-icon-font{
+	font-size:30px;
+	line-height:38px;
+	font-weight:500;
+	letter-spacing:1px;
+	color:#222222;
+	width:50px;
+}
+.social-width{
+	width:50px;
+}
+.desination-font-white{
+	font-size:16px;
+	color:#f5f5f5;
+	line-height:24px;
+	letter-spacing:1px;
+}
+/*========================================== 9.VOLUNTEERS END ===========================================*/
+/*========================================== 10.CAMPS START ===========================================*/
+.camp-font{
+	color:#222222;
+	letter-spacing:1px;
+	font-weight:600;
+	font-size:16px;
+	line-height:24px;
+}
+.camp-bor{
+	background:#ffffff;
+	border-radius:5px;
+	padding:15px;
+}
+.camp-left-con{
+	margin-left:68px;
+}
+.lttr-pad{
+
+	display:table-cell;
+}
+.camp-width{
+	width:75px;
+	display:table-cell;
+}
+.colon{
+	display:table-cell;
+	width:15px;
+}
+/*========================================== 10.CAMPS END ===========================================*/
+
+/*========================================== 11.CTA-2 START ===========================================*/
+.cta-bg-2{
+	background-image: url("../img/1920x500x2.jpg");
+	padding-top:100px;
+	padding-bottom:100px;
+}
+.cta-bor{
+	border:1px solid #f5f5f5;
+	padding:40px;
+	border-radius:5px;
+}
+
+/*========================================== 11.CTA-2 END ===========================================*/
+/*========================================== 12.FOOTER START ===========================================*/
+.footer-bg-clr{
+	background:#333333;
+	padding-top:100px;
+	padding-bottom:100px;
+}
+.footer-font-size{
+	font-size:40px;
+	color:#f5f5f5;
+}
+.footer-font1-size{
+	font-size:30px;
+	color:#f5f5f5;
+}
+.ft-sub-color{
+	background-color:#444444;
+	padding-bottom:20px;
+	padding-top:20px;
+	background-position: center;
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+.icon-width {
+    width:60px !important;
+}
+
+			/*=======subcribe=============*/
+.sub-bor{
+	background:rgba(247, 110, 126,0.7);
+	padding:30px;
+	border-radius:5px;
+}
+.subscribe-col {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+	/* position:relative;
+ */
+}
+/* .foot-position1{
+	position:absolute;
+} */
+.subscribe-col {
+    margin: 0px auto;
+    text-align: center;
+    width: 100% !important;
+}
+
+.foot-border{
+	padding-top:30px;
+	border-top:1px solid #dcdcdc;
+}
+.place_error.errorClass::-moz-placeholder{
+	text-transform:none;
+	color:#ffffff;
+	font-size:13px;
+}
+.email-failure ,.FailureMsg{
+	color: #ffffff !important;
+	font-size: 13px !important;
+	line-height: 23px !important;
+	margin-top:10px;
+	letter-spacing:1px;
+
+}
+.indicator-top {
+    padding-top: 15px !important;
+    letter-spacing: 1px;
+}
+.email-success,
+.sucessMessage {
+    color: #ffffff !important;
+	font-size: 13px !important;
+	line-height: 23px !important;
+	margin-top:10px;
+}
+
+.sub-bg{
+
+    background-color: #333333;
+    padding: 14px 20px 14px 20px;
+    border: 0px;
+    border-radius: 0 5px 5px 0;
+	cursor:pointer;
+	height:53px;
+	position: absolute;
+	right: 0;
+}
+
+.sub-icon{
+	color:#ffffff;
+}
+.input-box{
+	padding: 14px 70px 14px 30px;
+	border-radius:5px;
+	border:0;
+	height:53px;
+	position:relative;
+}
+.design-font{
+	font-weight: 700;
+}
+
+/*========================================== 12.FOOTER END ===========================================*/
+
+
+.input-box.place_error, .input-box.errorClass {
+    color: #ff0000 !important;
+}
+.input-box:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #666666;
+    opacity: 1;
+}
+.input-box::-webkit-input-placeholder {
+    /* Chrome */
+    color: #666666;
+}
+.input-box:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #666666;
+}
+.input-box::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #666666;
+    opacity: 1;
+}
+.input-box.errorClass:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #ff0000;
+    opacity: 1;
+}
+.input-box.errorClass::-webkit-input-placeholder {
+    /* Chrome */
+    color: #ff0000;
+}
+.input-box.errorClass:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ff0000;
+}
+.input-box.errorClass::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ff0000;
+    opacity: 1;
+}
+
+/*========================================== 16.MEDIA QUERY START ===========================================*/
+
+       @media only screen and (min-width: 992px){
+               /* Safari Browser Isuues */
+				 .menu {
+					display: inline-block !important;
+					vertical-align: middle !important;
+				}
+				 .navbar-collapse {
+					float: right !important;
+					display:block !important;
+					line-height:40px;
+				}
+
+
+            }
+
+@media only screen and (min-width: 992px) and (max-width:1199px){
+
+	.input-box {
+		padding: 14px 10px 14px 10px;
+	}
+
+	.icon-width {
+		width: 40px !important;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width:991px){
+	.nav{
+		float:none;
+		width:100%;
+		display:table !important
+	}
+	.navbar-toggler{
+		float: right !important;
+
+	}
+	.nav-link {
+		display: block;
+		padding: 5px !important;
+	}
+	.navbar-right.nav {
+		position:relative;
+	}
+	.res-pad20{
+		padding-bottom:20px;
+	}
+	.nav-header{
+		position:absolute;
+		top:-45px;
+		right:0px;
+	}
+	.nav-header{
+		position:absolute;
+		top:-45px;
+		right: 0px;
+	}
+
+
+
+
+
+	/* padding and margin */
+
+	.marg-bot1-res5{
+		margin-bottom:5px;
+	}
+	.res-pad20{
+		padding-bottom:20px;
+	}
+	.res-pad10{
+		padding-bottom:10px !important;
+	}
+	.res-top-pad10{
+		padding-top:10px !important;
+	}
+	.res-top-marg10{
+		margin-top:10px;
+	}
+	.res-marg10{
+		margin-bottom:10px;
+	}
+	.res1-pad-top20{
+		padding-top:20px;
+	}
+	.res1-pad-top30{
+		padding-top:30px;
+	}
+	.res1-marg-top30{
+		margin-top:30px;
+	}
+	.res-bot-pad30{
+		padding-bottom:30px;
+	}
+	.res1-pad-bot30{
+		padding-bottom:30px;
+	}
+
+	/* section changes */
+
+	.space-wid{
+		width:100%;
+	}
+	.space-1-wid{
+		width:100%;
+	}
+	.res1-cen{
+		text-align:center;
+	}
+
+	.foot-res-width{
+		width:75%;
+		margin:0 auto;
+	}
+	.foot-res-cent{
+		margin:0 auto;
+		text-align:center;
+	}
+	.no-marg-res20{
+		margin-top:0;
+	}
+	.icon-width {
+		width: 50px !important;
+	}
+	.footer-font-size{
+		font-size:35px;
+	}
+}
+
+@media only screen and (min-width: 250px) and (max-width:767px){
+
+
+	h1 {
+        font-size:30px;
+        line-height: 38px;
+    }
+
+	h2 {
+		font-size:26px;
+		line-height:34px;
+	}
+	h3 {
+		font-size: 22px;
+		line-height: 32px;
+	}
+	h4 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+	h5 {
+		font-size: 17px;
+		line-height: 25px;
+	}
+	h6{
+		font-size: 15px;
+		line-height: 23px;
+	}
+
+
+
+	/* menu */
+	.nav{
+		float:none;
+		width:100%;
+		display:table !important
+	}
+	.navbar-toggler{
+		float: right !important
+
+	}
+	.navbar-right.nav {
+		position:relative;
+	}
+
+	.nav-header{
+		position:absolute;
+		top:-45px;
+		right:0px;
+	}
+	.nav-link {
+		display: block;
+		padding: 5px !important;
+	}
+	.res2-cen{
+		margin:0 auto;
+		text-align:center;
+	}
+	.pad-top5{
+		padding-top:0;
+	}
+	.marg-bot-res5{
+		margin-bottom:5px;
+	}
+
+
+
+	/* padding and margin */
+
+
+	.res2-pad10{
+		padding-bottom:10px !important;
+	}
+	.res2-top-pad10{
+		padding-top:10px !important;
+	}
+	.res2-top-marg10{
+		margin-top:10px;
+	}
+	.res2-marg10{
+		margin-bottom:10px;
+	}
+	.res2-pad15{
+		padding-bottom:15px !important;
+	}
+	.res2-bot-pad20{
+		padding-bottom:20px;
+	}
+	.res2-top-pad20{
+		padding-top:20px !important;
+	}
+	.res2-marg-top20{
+		margin-top:20px;
+	}
+	.res2-marg-bot30{
+		margin-bottom:30px !important;
+	}
+	.res2-bot-pad30{
+		padding-bottom:30px;
+	}
+
+	.res2-top-pad30{
+		padding-top:30px;
+	}
+	.res2-marg-top30{
+		margin-top:30px !important;
+	}
+
+	/* section changes */
+
+	.space-wid{
+		width:100%;
+		float:none;
+	}
+	.space-1-wid{
+		width:100%;
+		float:none;
+	}
+	.section-padding {
+		padding-top: 50px;
+		padding-bottom:50px;
+	}
+	.footer-bg-clr {
+		padding-top: 50px;
+		padding-bottom:50px;
+	}
+	.cta-bg-img {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.cta-bg-2 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.sub-img-bor{
+		border-top:1px solid #d8d8d8;
+		border-left:1px solid #d8d8d8;
+		border-right:1px solid #d8d8d8;
+		border-bottom:0;
+		border-radius: 5px 5px 0 0;
+	}
+
+	.box-1-head{
+		border-left:1px solid #d8d8d8;
+		border-right:1px solid #d8d8d8;
+		border-bottom:1px solid #d8d8d8;
+		border-top:0;
+		border-radius: 0 0px 5px 5px;
+		 padding:20px 20px 20px 20px;
+	}
+	.header-sub-img {
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+	.cen-img-pad{
+		display:none;
+		padding-top:20px;
+	}
+
+	.res2-cen{
+		margin:0 auto;
+		text-align:center;
+	}
+	.width-res{
+		width:70%;
+		margin:0 auto;
+	}
+	.no-res-marg{
+		margin-top:0;
+	}
+	.icon-right{
+		float:none;
+	}
+	.marg-no-res{
+		margin-top:0;
+	}
+	.icon-width {
+		width: 50px !important;
+	}
+	.footer-font-size{
+		font-size:35px;
+	}
+	.guest-font {
+		font-size: 20px;
+		line-height: 28px;
+	}
+}
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+
+	.res2-top1-pad30{
+		padding-top:30px;
+	}
+	.res3-cen{
+		margin:0 auto;
+		text-align:center;
+	}
+
+}
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+
+
+
+
+	.no-pad-res{
+		padding-right:0;
+		padding-left:0;
+	}
+	.res3-center{
+		margin:0 auto;
+		text-align:center;
+	}
+	.img-res-pad{
+		padding:10px 15px 20px 15px;
+	}
+
+	.input-box {
+		width: 100%;
+	}
+
+	.sub-bor {
+		padding: 15px;
+	}
+
+	.width-res {
+		width: 100%;
+	}
+	.count-res{
+		display: table;
+		width: 100%;
+		float: none;
+		max-width: 100%;
+		flex:inherit;
+	}
+	.res4-pad-bot30{
+		padding-bottom:30px;
+	}
+
+}
+@media only screen and (min-width: 250px) and (max-width: 414px) {
+	.width-res {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 250px) and (max-width: 360px) {
+	.icon-res-rgt{
+		margin-right:10px ! important;
+	}
+	.camp-left-con {
+		margin-left: 5px;
+	}
+	.res4-marg15{
+		margin-top:15px !important;
+	}
+
+}

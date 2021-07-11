@@ -1,0 +1,96 @@
+<div class="page-wrapper">
+
+  <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+              <h4 class="page-title">Dashboard</h4>
+          </div>
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+              <div class="d-md-flex">
+                  <ol class="breadcrumb ms-auto">
+                      <li><a  class="fw-normal">Dashboard</a></li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <div class="container-fluid">
+
+      <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-12">
+              <div class="white-box analytics-info">
+                  <h3 class="box-title">Nombre de Personnel</h3>
+                  <ul class="list-inline two-part d-flex align-items-center mb-0">
+
+                      <li class="ms-auto">
+                        <circle-progress
+                        [percent]="Users?.length"
+                        [radius]="100"
+                        [maxPercent]="100"
+                        [outerStrokeWidth]="10"
+                        [innerStrokeWidth]="10"
+                        [outerStrokeColor]="'#78C000'"
+                        [innerStrokeColor]="'#C7E596'"
+                        [animation]="true"
+                        [animationDuration]="1000"
+                        [title]="'Personnel'"
+                      ></circle-progress>
+                        <span class="counter text-success">{{Users?.length}}</span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+              <div class="white-box analytics-info">
+                  <h3 class="box-title">Nombre de Donneur sur mobile </h3>
+                  <ul class="list-inline two-part d-flex align-items-center mb-0">
+
+                    <li class="ms-auto">
+                      <circle-progress
+                      [percent]="Donnors?.length"
+                      [radius]="100"
+                      [maxPercent]="100"
+                      [outerStrokeWidth]="10"
+                      [innerStrokeWidth]="10"
+                      [outerStrokeColor]="'#0000FF'"
+                      [innerStrokeColor]="'#A9A9A9'"
+                      [animation]="true"
+                      [animationDuration]="1000"
+                      [title]="'Donneur'"
+                    ></circle-progress>
+                      <span class="counter text-dark">{{Donnors?.length}}</span>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+              <div class="white-box analytics-info">
+                  <h3 class="box-title">Campagne lancée</h3>
+                  <ul class="list-inline two-part d-flex align-items-center mb-0">
+
+                    <li class="ms-auto">
+                      <circle-progress
+                      [percent]="Campa?.length"
+                      [radius]="100"
+                      [maxPercent]="100"
+                      [outerStrokeWidth]="10"
+                      [innerStrokeWidth]="10"
+                      [outerStrokeColor]="'#FFFFFF'"
+                      [innerStrokeColor]="'#c00000'"
+                      [animation]="true"
+                      [animationDuration]="1000"
+                      [title]="'Campagne'"
+                    ></circle-progress>
+                      <span class="counter text-danger">{{Campa?.length}}</span>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <footer class="footer text-center"> 2021 Produit par BEHANZIN Freddy & SENOU Patricia
+  </footer>
+</div>
+

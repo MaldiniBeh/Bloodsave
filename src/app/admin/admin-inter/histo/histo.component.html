@@ -1,0 +1,105 @@
+<div class="page-wrapper">
+
+  <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+              <h4 class="page-title">Historique</h4>
+          </div>
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+              <div class="d-md-flex">
+                  <ol class="breadcrumb ms-auto">
+                      <li><a  class="fw-normal">Dashboard</a></li>
+                  </ol>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="container-fluid">
+
+      <div class="row">
+        <ng-template #nodata>
+          <h1 style="text-align: center;">Aucune Campagne Lancée</h1>
+        </ng-template>
+        <div *ngIf="Campfix?.length>0; else nodata">
+          <div *ngFor="let item of Campfix; index as i">
+            <div class="card">
+           <div class="card-header">
+             Campagne {{i+1}}
+           </div>
+           <div class="card-body">
+             <h5 class="card-title">Campagne du {{item.Datecapm | date}}  de {{item.heure_dep}} à {{item.heure_fin}}.</h5>
+             <p class="card-text">Lieu : {{item.Lieucamp}}</p>
+             <p class="card-text">Description du campagne : {{item.Description}}</p>
+             <p class="card-text">Equipe Sélectionnée </p>
+             <div style="display: flex;justify-content: space-between;">
+               <div class="card" style="width: 18rem;">
+               <div class="card-header">
+                 <h3>Acceuil</h3>
+               </div>
+               <ul class="list-group list-group-flush" *ngFor="let acc of item.equipe.acceuil; index as r">
+                 <li class="list-group-item" style="display: start;">
+                {{acc.name}} {{acc.last}}</li>
+               </ul>
+
+             </div>
+             <div class="card" style="width: 18rem;">
+               <div class="card-header">
+                 <h3>Infirmier</h3>
+               </div>
+               <ul class="list-group list-group-flush" *ngFor="let inf of item.equipe.infirmier; index as j">
+                 <li class="list-group-item" style="display: start;">
+                {{inf.name}} {{inf.last}}</li>
+               </ul>
+
+             </div>
+
+             <div class="card" style="width: 18rem;">
+               <div class="card-header">
+                 <h3>Prélèvement</h3>
+               </div>
+               <ul class="list-group list-group-flush" *ngFor="let pre of item.equipe.prelevement; index as k; ">
+                 <li class="list-group-item" style="display: start;">
+                   {{pre.name}}  {{pre.last}}
+                   </li>
+               </ul>
+
+             </div>
+
+
+           </div>
+           <div class="row">
+             <div class="col-md-4"></div>
+           <table class="table text-nowrap col-md-4">
+            <thead>
+                <tr>
+                    <th class="border-top-0">Matériel</th>
+                    <th class="border-top-0">Quantité</th>
+                    </tr>
+            </thead>
+            <tbody *ngFor="let mat of item.materiel" >
+                <tr>
+                    <td>{{mat.libele}}</td>
+                    <td>{{mat.qte}}</td>
+                    </tr>
+
+                </tbody>
+        </table>
+        <div class="col-md-4"></div>
+      </div>
+         </div>
+         </div>
+         </div>
+        </div>
+
+              </div>
+              <footer class="footer text-center"> 2021 Produit par BEHANZIN Freddy & SENOU Patricia
+              </footer>
+          </div>
+          <!-- Column -->
+
+
+
+

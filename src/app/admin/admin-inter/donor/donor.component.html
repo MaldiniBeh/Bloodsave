@@ -1,0 +1,74 @@
+
+<div class="page-wrapper">
+  <div  class="preloader" *ngIf="isload">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+  <div class="page-breadcrumb bg-white">
+      <div class="row align-items-center">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+              <h4 class="page-title">Listes des Donneurs</h4>
+          </div>
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+              <div class="d-md-flex">
+                  <ol class="breadcrumb ms-auto">
+                      <li><a  class="fw-normal">Dashboard</a></li>
+                  </ol>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="container-fluid">
+
+      <div class="row">
+          <div class="col-sm-12">
+            <ng-template #nodata>
+              <h1 style="text-align: center;">Aucun Donneur disponible</h1>
+            </ng-template>
+              <div class="white-box" *ngIf="Donnor?.length>0; else nodata">
+                  <h3 class="box-title">Liste des donneurs </h3>
+                  <p class="text-muted"><code>{{Donnor?.length}} {{Donnor?.length>1 ? 'donneurs' : 'donneur' }}</code></p>
+                  <div class="table-responsive">
+                      <table class="table text-nowrap" >
+                          <thead>
+                              <tr>
+                                  <th class="border-top-0">#</th>
+                                  <th class="border-top-0">Nom</th>
+                                  <th class="border-top-0">Prenom</th>
+                                  <th class="border-top-0">Département</th>
+                                  <th class="border-top-0">Commune</th>
+                                  <th class="border-top-0">Arrondissement</th>
+                                  <th class="border-top-0">Contact</th>
+                                  <th class="border-top-0">Action</th>
+                              </tr>
+                          </thead>
+                          <tbody *ngFor="let don of Donnor index as i " >
+                              <tr>
+                                  <td>{{i+1}}</td>
+                                  <td>{{don.firstname}}</td>
+                                  <td>{{don.lastname}}</td>
+                                  <td>{{don.dep}}</td>
+                                  <td>{{don.com}}</td>
+                                  <td>{{don.arro}}</td>
+                                  <td>{{don.Contact}}</td>
+                                  <td><i class="fa text-success font-weight-bolder fa-edit m-2" style="cursor: pointer;"(click)="Upuser(user)" ></i></td>
+                              </tr>
+
+                              </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <footer class="footer text-center"> 2021 Produit par BEHANZIN Freddy & SENOU Patricia
+  </footer>
+
+</div>

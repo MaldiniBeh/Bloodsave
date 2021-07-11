@@ -1,0 +1,149 @@
+<div  class="preloader" *ngIf="isload">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+  data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+  <header class="topbar" data-navbarbg="skin5">
+    <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+      <div class="navbar-header" data-logobg="skin6">
+
+        <a class="navbar-brand">
+          <!-- Logo icon -->
+          <b class="logo-icon">
+            <!-- Dark Logo icon -->
+            <img src="/assets/img/dd.png" alt="homepage" />
+          </b>
+
+        </a>
+
+        <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"><i class="ti-menu ti-close"></i></a>
+      </div>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
+          <li class=" in">
+            <form role="search" class="app-search d-none d-md-block me-3">
+              <input type="text" placeholder="Search..." class="form-control mt-0"
+               [(ngModel)]="filtadm" name="reachPipe" (input) ="toto($event.target.value)">
+              <a class="active">
+                <i class="fa fa-search"></i>
+              </a>
+            </form>
+          </li>
+
+          <li>
+            <a class="profile-pic">
+              <img src="/assets/img/user.png" alt="user-img" width="36" style="background-color: white;"
+                class="img-circle"><span class="text-white font-medium" *ngFor="let user of tabuser"> {{user.name}} {{user.last}}</span></a>
+          </li>
+
+        </ul>
+        <div class="buttons">
+          <button class="text-light btn btn-default border-0 button" id="seven">
+            <h3>
+              <i class="fa text-danger font-weight-bolder fa-power-off"></i>
+            </h3>
+
+          </button>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <aside class="left-sidebar" data-sidebarbg="skin6">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+        <ul id="sidebarnav">
+          <!-- User Profile-->
+          <li class="sidebar-item pt-2" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin']"
+              aria-expanded="false">
+              <i class="far fa-clock" aria-hidden="true"></i>
+              <span class="hide-menu">Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','profile']"
+              aria-expanded="false">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span class="hide-menu">Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','camp']"
+              aria-expanded="false">
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Campagne</span>
+            </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','equip']"
+              aria-expanded="false">
+              <i class="fa fa-font" aria-hidden="true"></i>
+              <span class="hide-menu " >Personnel</span>
+                         </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','histo']"
+              aria-expanded="false">
+              <i class="fa fa-globe" aria-hidden="true"></i>
+              <span class="hide-menu">Historiques</span>
+            </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','donor']"
+              aria-expanded="false">
+              <i class="fa fa-columns" aria-hidden="true"></i>
+              <span class="hide-menu">Contacter les donneurs</span>
+            </a>
+          </li>
+          <li class="sidebar-item" routerLinkActive="active">
+
+            <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','rapport']"
+              aria-expanded="false">
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+              <span class="hide-menu">Consulter rapport</span>
+            </a>
+          </li>
+          <li class="text-center p-20 upgrade-btn">
+            <h3 class="btn d-grid btn-danger text-white" target="_blank">Admin conecté
+            </h3>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </aside>
+
+  <router-outlet></router-outlet>
+
+</div>
+
+<div id="modal-container">
+  <div class="modal-background bg-dark">
+    <div class="modal" style=" width :350px !important;">
+      <h4>Voulez-vous vraiment vous déconnecter?</h4><br>
+      <div class="col-xs-12">
+        <button class="btn btn-success">Non</button>
+        <button class="btn btn-danger" (click)="OnadminLogout()">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>
