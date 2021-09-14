@@ -1,9 +1,9 @@
-<div  class="preloader" *ngIf="isload">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+<div class="preloader" *ngIf="isload">
+  <div class="lds-ripple">
+    <div class="lds-pos"></div>
+    <div class="lds-pos"></div>
+  </div>
+</div>
 
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
   data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
@@ -28,8 +28,8 @@
         <ul class="navbar-nav ms-auto d-flex align-items-center">
           <li class=" in">
             <form role="search" class="app-search d-none d-md-block me-3">
-              <input type="text" placeholder="Search..." class="form-control mt-0"
-               [(ngModel)]="filtadm" name="reachPipe" (input) ="toto($event.target.value)">
+              <input type="text" placeholder="Search..." class="form-control mt-0" [(ngModel)]="filtadm"
+                name="reachPipe" (input)="toto($event.target.value)">
               <a class="active">
                 <i class="fa fa-search"></i>
               </a>
@@ -39,7 +39,8 @@
           <li>
             <a class="profile-pic">
               <img src="/assets/img/user.png" alt="user-img" width="36" style="background-color: white;"
-                class="img-circle"><span class="text-white font-medium" *ngFor="let user of tabuser"> {{user.name}} {{user.last}}</span></a>
+                class="img-circle"><span class="text-white font-medium" *ngFor="let user of tabuser"> {{user.name}}
+                {{user.last}}</span></a>
           </li>
 
         </ul>
@@ -93,8 +94,8 @@
             <a class="sidebar-link waves-effect waves-dark sidebar-link" [routerLink]="['/hostAdmin','equip']"
               aria-expanded="false">
               <i class="fa fa-font" aria-hidden="true"></i>
-              <span class="hide-menu " >Personnel</span>
-                         </a>
+              <span class="hide-menu ">Personnel</span>
+            </a>
           </li>
           <li class="sidebar-item" routerLinkActive="active">
 
@@ -147,3 +148,4 @@
     </div>
   </div>
 </div>
+

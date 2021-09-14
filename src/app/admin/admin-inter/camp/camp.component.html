@@ -1,196 +1,227 @@
 <div class="page-wrapper">
 
   <div class="page-breadcrumb bg-white">
-      <div class="row align-items-center">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-              <h4 class="page-title">Campagne</h4>
-          </div>
-          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-              <div class="d-md-flex">
-                  <ol class="breadcrumb ms-auto">
-                      <li><a  class="fw-normal">Dashboard</a></li>
-                  </ol>
-
-              </div>
-          </div>
+    <div class="row align-items-center">
+      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Campagne</h4>
       </div>
+      <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <div class="d-md-flex">
+          <ol class="breadcrumb ms-auto">
+            <li><a class="fw-normal">Dashboard</a></li>
+          </ol>
+
+        </div>
+      </div>
+    </div>
 
   </div>
 
   <div class="container-fluid">
 
-      <div class="row">
+    <div class="row">
 
-          <div class="col-lg-4 col-xlg-3 col-md-12 ">
-            <div class="card">
-              <div class="card-body">
-                <form class="bg-white form-inline form-horizontal form-material" [formGroup] ="Mate">
-                  <div formArrayName="tabmat">
+      <div class="col-lg-4 col-xlg-3 col-md-12 ">
+        <div class="card">
+          <div class="card-body">
+            <form class="bg-white form-inline form-horizontal form-material" [formGroup]="Mate">
+              <div formArrayName="tabmat">
 
-                    <div *ngFor="let ctrl of Mate?.get('tabmat')?.controls; index as i" [formGroupName]="i">
+                <div *ngFor="let ctrl of Mate?.get('tabmat')?.controls; index as i" [formGroupName]="i">
 
-                            <div class="form-group mb-4">
-                      <label class="col-md-12 p-0">Matériel</label>
-                      <div class="col-md-8 border-bottom p-0" >
-                         <select class="form-select shadow-none p-0 border-0 form-control-line"  formControlName ="libele" >
-                          <option value=""></option>
+                  <div class="form-group mb-4">
+                    <label class="col-md-12 p-0">Matériel</label>
+                    <div class="col-md-8 border-bottom p-0">
+                      <select class="form-select shadow-none p-0 border-0 form-control-line" formControlName="libele">
+                        <option value=""></option>
                         <option *ngFor="let eqp of Tools" value="{{eqp.libele}}">{{eqp.libele}} </option>
-                              </select>
-                            </div>
-                            <p class="text-danger" *ngIf="ctrl.get('libele')?.touched && !ctrl.get('libele')?.valid" >Renseigner matériel</p>
+                      </select>
+                    </div>
+                    <p class="text-danger" *ngIf="ctrl.get('libele')?.touched && !ctrl.get('libele')?.valid">Renseigner
+                      matériel</p>
 
                   </div>
                   <div style="display: flex;justify-content: space-between;">
-                      <div class="form-group mb-4">
-                    <label class="col-md-12 p-0">Qte</label>
-                    <div class="col-md-8 border-bottom p-0">
-                        <input type="number"
-                            class="form-control p-0 border-0" formControlName="qte">
+                    <div class="form-group mb-4">
+                      <label class="col-md-12 p-0">Qte</label>
+                      <div class="col-md-8 border-bottom p-0">
+                        <input type="number" class="form-control p-0 border-0" formControlName="qte">
 
-                          </div>
+                      </div>
 
-                           </div>
-                            <button class="btn btn-danger m-5"(click) ="onDeletemat(i)" >X</button>
-                          </div>
-                          <p class="text-danger text-center" *ngIf="ctrl.get('qte')?.touched && !ctrl.get('qte')?.valid" >Renseigner une quantité Valide</p>
                     </div>
-
+                    <button class="btn btn-danger m-5" (click)="onDeletemat(i)">X</button>
                   </div>
+                  <p class="text-danger text-center" *ngIf="ctrl.get('qte')?.touched && !ctrl.get('qte')?.valid">
+                    Renseigner une quantité Valide</p>
+                </div>
+
+              </div>
 
               <div class="form-group mb-4">
                 <div class="col-sm-12">
-                    <button class="btn btn-success"(click)="onAddmat()" >Ajouter Matériel</button>
+                  <button class="btn btn-success" (click)="onAddmat()">Ajouter Matériel</button>
                 </div>
-            </div>
-               </form>
               </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8 col-xlg-9 col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <form class="form-horizontal form-material" [formGroup]="Campagne">
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Date de Lancement</label>
+                <div class="col-md-12 border-bottom p-0">
+                  <input type="date" class="form-control p-0 border-0" formControlName="date">
+                  <p class="text-danger" *ngIf="!Campagne?.get('date')?.valid && Campagne?.get('date')?.touched ">
+                    Choisie une date</p>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Heure départ</label>
+                <div class="col-md-12 border-bottom p-0">
+                  <input type="time" class="form-control p-0 border-0" formControlName="timed"> </div>
+                <p class="text-danger" *ngIf="!Campagne?.get('timed')?.valid && Campagne?.get('timed')?.touched ">
+                  Choisie une Heure</p>
+              </div>
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Heure Fin</label>
+                <div class="col-md-12 border-bottom p-0">
+                  <input type="time" class="form-control p-0 border-0" formControlName="timef"> </div>
+                <p class="text-danger" *ngIf="!Campagne?.get('timef')?.valid && Campagne?.get('timef')?.touched ">
+                  Choisie une Heure</p>
+              </div>
+              <div class="form-group mb-4">
+                <!-- <label class="col-md-12 p-0">Selectionnez la ville</label> -->
+                <div class="col-sm-12 border-bottom">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    formControlName="ville">
+                    Selectionnez la ville
+                  </button>
+                  <!-- <select class="form-select shadow-none p-0 border-0 form-control-line" formControlName="ville">
+
+                    <option value=""></option>
+                    <option value="Abomey-Calavi">Abomey-Calavi</option>
+                    <option value="Allada">Allada</option>
+                    <option value="Cotonou">Cotonou</option>
+                    <option value="Kpomassè">Kpomassè</option>
+                    <option value="Ouidah">Ouidah</option>
+                    <option value="Sô-Ava">Sô-Ava</option>
+                    <option value="Toffo">Toffo</option>
+                    <option value="Tori">Tori</option>
+                    <option value="Zê">Zê</option>
+
+                  </select> -->
+                  <p class="text-danger" *ngIf="!Campagne?.get('ville')?.valid && Campagne?.get('ville')?.touched ">
+                    Choisie une Ville</p>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Lieu</label>
+                <div class="col-md-12 border-bottom p-0">
+                  <input type="text" class="form-control p-0 border-0" formControlName="lieu">
+                  <p class="text-danger" *ngIf="!Campagne?.get('lieu')?.valid && Campagne?.get('lieu')?.touched ">
+                    Renseigner le lieu </p>
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label class="col-md-12 p-0">Description du campagne</label>
+                <div class="col-md-12 border-bottom p-0">
+                  <textarea rows="8" class="form-control p-0 border-0" formControlName="desc"></textarea>
+                  <p class="text-danger" *ngIf="!Campagne?.get('desc')?.valid && Campagne?.get('desc')?.touched ">
+                    Description du campagne Obligatoire </p>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+        <h1 style="text-align: center;">Equipe</h1>
+        <form [formGroup]="forinf">
+          <div style="display: flex;justify-content: space-between;">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <h3>Infirmier</h3>
+              </div>
+              <ul class="list-group list-group-flush" *ngFor="let inf of userInf; index as i">
+
+                <li class="list-group-item" style="display: start;">
+                  <input type="checkbox" (change)="oncheckuser($event.target.checked,inf.id,inf.name,inf.last,0)"
+                    formControlName='inf'> {{inf.name}} {{inf.last}}</li>
+
+              </ul>
+
+            </div>
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <h3>Acceuil</h3>
+              </div>
+              <ul class="list-group list-group-flush" *ngFor="let acc of userAcc">
+
+                <li class="list-group-item" style="display: start;"><input type="checkbox"
+                    (change)="oncheckuser($event.target.checked,acc.id,acc.name,acc.last,1)" formControlName='acc'>
+                  {{acc.name}} {{acc.last}}</li>
+
+              </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <h3>Prelèvement</h3>
+              </div>
+              <ul class="list-group list-group-flush" *ngFor="let pre of userPrele">
+
+                <li class="list-group-item" style="display: start;"><input type="checkbox"
+                    (change)="oncheckuser($event.target.checked,pre.id,pre.name,pre.last,2)" formControlName='pre'>
+                  {{pre.name}} {{pre.last}}</li>
+              </ul>
 
             </div>
 
           </div>
+        </form>
 
-          <div class="col-lg-8 col-xlg-9 col-md-12">
-              <div class="card">
-                  <div class="card-body">
-                      <form class="form-horizontal form-material"[formGroup] ="Campagne" >
-                          <div class="form-group mb-4">
-                              <label class="col-md-12 p-0">Date de Lancement</label>
-                              <div class="col-md-12 border-bottom p-0">
-                                  <input type="date"
-                                   class="form-control p-0 border-0"
-                                    formControlName = "date">
-                                      <p class="text-danger"  *ngIf="!Campagne?.get('date')?.valid && Campagne?.get('date')?.touched ">Choisie une date</p>
-                                     </div>
-                          </div>
-                          <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Heure départ</label>
-                            <div class="col-md-12 border-bottom p-0">
-                                <input type="time"
-                                 class="form-control p-0 border-0" formControlName = "timed"> </div>
-                                    <p class="text-danger"  *ngIf="!Campagne?.get('timed')?.valid && Campagne?.get('timed')?.touched ">Choisie une Heure</p>
-                        </div>
-                        <div class="form-group mb-4">
-                          <label class="col-md-12 p-0">Heure Fin</label>
-                          <div class="col-md-12 border-bottom p-0">
-                              <input type="time"
-                               class="form-control p-0 border-0"  formControlName = "timef"> </div>
-                                  <p class="text-danger"  *ngIf="!Campagne?.get('timef')?.valid && Campagne?.get('timef')?.touched ">Choisie une Heure</p>
-                      </div>
-                          <div class="form-group mb-4">
-                            <label class="col-md-12 p-0">Selectionnez la ville</label>
-                            <div class="col-sm-12 border-bottom">
-                                <select class="form-select shadow-none p-0 border-0 form-control-line"  formControlName ="ville">
-
-                                  <option value=""></option>
-                                    <option value="Abomey-Calavi">Abomey-Calavi</option>
-                                    <option value="Allada">Allada</option>
-                                    <option value="Cotonou">Cotonou</option>
-                                    <option value="Kpomassè">Kpomassè</option>
-                                    <option value="Ouidah">Ouidah</option>
-                                    <option value="Sô-Ava">Sô-Ava</option>
-                                    <option value="Toffo">Toffo</option>
-                                    <option value="Tori">Tori</option>
-                                    <option value="Zê">Zê</option>
-
-                                </select>
-                                <p class="text-danger"  *ngIf="!Campagne?.get('ville')?.valid && Campagne?.get('ville')?.touched ">Choisie une Ville</p>
-                            </div>
-                        </div>
-                          <div class="form-group mb-4">
-                              <label class="col-md-12 p-0">Lieu</label>
-                              <div class="col-md-12 border-bottom p-0">
-                                  <input type="text" class="form-control p-0 border-0"  formControlName ="lieu">
-                                  <p class="text-danger"  *ngIf="!Campagne?.get('lieu')?.valid && Campagne?.get('lieu')?.touched ">Renseigner le lieu </p>
-                              </div>
-                          </div>
-
-                          <div class="form-group mb-4">
-                              <label class="col-md-12 p-0">Description du campagne</label>
-                              <div class="col-md-12 border-bottom p-0">
-                                  <textarea rows="8" class="form-control p-0 border-0"  formControlName ="desc"></textarea>
-                                  <p class="text-danger"  *ngIf="!Campagne?.get('desc')?.valid && Campagne?.get('desc')?.touched ">Description du campagne Obligatoire </p>
-                              </div>
-                          </div>
-
-                        </form>
-
-                        </div>
-
-                        </div>
-                        <h1 style="text-align: center;">Equipe</h1>
-                        <form [formGroup] ="forinf">
-                          <div style="display: flex;justify-content: space-between;">
-                            <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                              <h3>Infirmier</h3>
-                            </div>
-                            <ul class="list-group list-group-flush" *ngFor="let inf of userInf; index as i">
-
-                              <li class="list-group-item" style="display: start;">
-                              <input type="checkbox"  (change)="oncheckuser($event.target.checked,inf.id,inf.name,inf.last,0)" formControlName = 'inf' > {{inf.name}} {{inf.last}}</li>
-
-                            </ul>
-
-                          </div>
-                          <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                              <h3>Acceuil</h3>
-                            </div>
-                            <ul class="list-group list-group-flush" *ngFor="let acc of userAcc">
-
-                              <li class="list-group-item" style="display: start;"><input type="checkbox"(change) = "oncheckuser($event.target.checked,acc.id,acc.name,acc.last,1)" formControlName = 'acc' > {{acc.name}} {{acc.last}}</li>
-
-                            </ul>
-                          </div>
-                          <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                              <h3>Prelèvement</h3>
-                            </div>
-                            <ul class="list-group list-group-flush" *ngFor="let pre of userPrele">
-
-                              <li class="list-group-item" style="display: start;"><input type="checkbox" (change)="oncheckuser($event.target.checked,pre.id,pre.name,pre.last,2)" formControlName = 'pre'> {{pre.name}} {{pre.last}}</li>
-                            </ul>
-
-                          </div>
-
-                        </div>
-                        </form>
-
-                      <div class="form-group mb-4">
-                        <div class="col-sm-12">
-                            <button class="btn btn-success btn-lg btn-block" (click)="OnlanceCamp()">Lancer Campagne</button>
-                        </div>
-                        </div>
-
-                    </div>
-
-                  </div>
-              </div>
-              <footer class="footer text-center"> 2021 Produit par BEHANZIN Freddy & SENOU Patricia
-              </footer>
+        <div class="form-group mb-4">
+          <div class="col-sm-12">
+            <button class="btn btn-success btn-lg btn-block" (click)="OnlanceCamp()">Lancer Campagne</button>
           </div>
-          <!-- Column -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer text-center"> 2021 Produit par BEHANZIN Freddy & SENOU Patricia
+  </footer>
+</div>
+<!-- Column -->
 
 
-
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Choisie l'emplacement</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="mape"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Validé</button>
+      </div>
+    </div>
+  </div>
+</div>

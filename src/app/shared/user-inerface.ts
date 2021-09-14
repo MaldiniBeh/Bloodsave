@@ -2,6 +2,7 @@ export interface User {
   id?: string;
 name?: string;
 last?: string;
+prof?: string;
 email?: string;
 typeCount?: string;
 }

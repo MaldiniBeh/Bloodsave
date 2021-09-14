@@ -173,7 +173,7 @@ export class AuthService {
     // });
   }
   // tslint:disable-next-line: typedef
-  Onsignup(email: string, password: string, name: string, last: string) {
+  Onsignup(email: string, password: string, name: string, last: string, prof: string) {
     return this.auth.createUserWithEmailAndPassword(email, password).then(result => {
       if (result.user?.sendEmailVerification()) {
         this.firestore.collection('User').doc(result.user.uid).set({
@@ -183,6 +183,8 @@ export class AuthService {
           name: name,
           // tslint:disable-next-line: object-literal-shorthand
           last: last,
+           // tslint:disable-next-line: object-literal-shorthand
+           prof: prof,
           // tslint:disable-next-line: object-literal-shorthand
           email: email,
           typeCount: 'Simple'

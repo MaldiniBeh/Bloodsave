@@ -1,20 +1,23 @@
+import { environment } from './../../../environments/environment.prod';
 import { User } from './../../shared/user-inerface';
 import { AuthService } from './../../service/auth-service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-
+import * as tt from '@tomtom-international/web-sdk-maps';
 
 @Component({
   selector: 'app-admin-auth',
   templateUrl: './admin-auth.component.html',
-  styleUrls: ['./admin-auth.component.scss']
+  styleUrls: ['./admin-auth.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AdminAuthComponent implements OnInit {
   isLogin = true;
- // waitaction = false;
-   myStyle: object = {};
+  mape: any;
+  // waitaction = false;
+  myStyle: object = {};
   myParams: object = {};
   Conneform: FormGroup | undefined;
   Insform: FormGroup | undefined;
@@ -68,6 +71,7 @@ export class AdminAuthComponent implements OnInit {
     );
     this.Insform = new FormGroup({
       usernamelast: new FormControl(null, [Validators.required]),
+      profesion: new FormControl(null, [Validators.required]),
       username: new FormControl(null, [Validators.required]),
       insmail: new FormControl(null, [Validators.required, Validators.email]),
       inspass: new FormControl(null, [Validators.required, Validators.minLength(6)])
@@ -83,7 +87,7 @@ export class AdminAuthComponent implements OnInit {
     // console.log(this.waitaction);
 
     // this.waitaction = true;
-   // console.log(this.waitaction);
+    // console.log(this.waitaction);
     const mail = this.Conneform?.value.mail;
     const pass = this.Conneform?.value.pass;
     this.authervice.Onsignin(mail, pass);
@@ -94,7 +98,8 @@ export class AdminAuthComponent implements OnInit {
     const pass = this.Insform?.value.inspass;
     const name = this.Insform?.value.username;
     const last = this.Insform?.value.usernamelast;
-    this.authervice.Onsignup(mail, pass, name, last);
+    const prof = this.Insform?.value.profesion;
+    this.authervice.Onsignup(mail, pass, name, last, prof);
     this.isLogin = true;
   }
   async Onforgetpass(): Promise<void> {
